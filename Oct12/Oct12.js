@@ -17,8 +17,6 @@ const expected2a = [1, 2, 3];
 const twoDimArr3 = [[], [], [10, 20]];
 const expected3a = [10, 20];
 
-
-
 /**
  * Flattens a two dimensional array into a new one dimensional array.
  * - Time: O(?).
@@ -27,14 +25,16 @@ const expected3a = [10, 20];
  * @returns {Array<any>} The flattened array that should be one dimensional.
  */
 function flatten2dArray(twoDimArr) {
-	let returnArr = []
-      for (let e of twoDimArr){
-            returnArr = returnArr.concat(e);
-      }
-      return returnArr
+	let returnArr = [];
+	for (let e of twoDimArr) {
+		returnArr = returnArr.concat(e);
+	}
+	return returnArr;
 }
 
-console.log(flatten2dArray(twoDimArr3), "shouldbe", expected3a)
+console.log(flatten2dArray(twoDimArr1), "should be", expected1a);
+console.log(flatten2dArray(twoDimArr2), "should be", expected2a);
+console.log(flatten2dArray(twoDimArr3), "should be", expected3a);
 
 /*
     Array: Second-Largest
@@ -82,21 +82,30 @@ const expected8 = null;
  *    The ? in front means it's nullable.
  */
 function secondLargest(nums) {
-      let a = -Infinity
-      let b = -Infinity
-      for (let i = 0;i<nums.length;i++){
-            if (nums[i] >= a){
-                  b = a;
-                  a = nums[i];
-            } else if (nums[i] > b){
-                  b = nums[i]
-            }
-      }
-      if (b === -Infinity){
-            return null
-      } else {
-            return b
-      }
+	let a = -Infinity;
+	let b = -Infinity;
+	for (let i = 0; i < nums.length; i++) {
+		if (nums[i] >= a) {
+			if (nums[i] > a) {
+				b = a;
+			}
+			a = nums[i];
+		} else if (nums[i] > b && nums[i] < a) {
+			b = nums[i];
+		}
+	}
+	if (b === -Infinity) {
+		return null;
+	} else {
+		return b;
+	}
 }
 
-console.log(secondLargest([3,4,6]),"should be 4")
+console.log(secondLargest(nums1), "should be", expected1);
+console.log(secondLargest(nums2), "should be", expected2);
+console.log(secondLargest(nums3), "should be", expected3);
+console.log(secondLargest(nums4), "should be", expected4);
+console.log(secondLargest(nums5), "should be", expected5);
+console.log(secondLargest(nums6), "should be", expected6);
+console.log(secondLargest(nums7), "should be", expected7);
+console.log(secondLargest(nums8), "should be", expected8);
