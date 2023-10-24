@@ -40,7 +40,7 @@ function join(arr, separator) {
   let string = ''
   for (let i = 0; i < list.length;i++){
     string += list[i].toString()
-    if ([i] < list.length - 1){
+    if (i < list.length - 1){
       string += separator
     }
 
@@ -52,4 +52,49 @@ console.log(join(arr3,separator3))
 console.log(join(arr4,separator4))
 console.log(join(arr5,separator5))
 
+/*****************************************************************************/
+
+/*
+  Acronyms
+
+  Create a function that, given a string, returns the string’s acronym
+  (first letter of each word capitalized).
+
+  Do it with .split first if you need to, then try to do it without
+*/
+
+
+
+const str1 = "object oriented programming";
+const expected1b = "OOP";
+
+// The 4 pillars of OOP
+const str2 = "abstraction polymorphism inheritance encapsulation";
+const expected2b = "APIE";
+
+const str3 = "software development life cycle";
+const expected3b = "SDLC";
+
+// Bonus: ignore extra spaces
+const str4 = "  global   information tracker    ";
+const expected4b = "GIT";
+
+/**
+ * Turns the given str into an acronym.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {string} wordsStr A string to be turned into an acronym.
+ * @returns {string} The acronym.
+ */
+// were given string
+// WE return first letter of each string
+// using split we can accomplish task 2
+function acronymize(str) {
+  let result = ""
+  let letter = ""
+  let newStr = str.split(' ')
+  console.log(str)
+}
+
+console.log(acronymize(srt1))
 /*****************************************************************************/
