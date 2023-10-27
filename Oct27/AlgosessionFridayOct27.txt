@@ -1,0 +1,7 @@
+Array name = key
+Array's content becomes = Values
+
+use loop to populate the values within the Array
+
+
+
